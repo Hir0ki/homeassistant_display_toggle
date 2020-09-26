@@ -1,3 +1,5 @@
+#!/usr/bin/python3 -u 
+
 from config.settings import CONFIG
 from subprocess import call
 import paho.mqtt.client as mqtt
