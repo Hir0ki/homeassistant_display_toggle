@@ -1,0 +1,27 @@
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+  default:
+    format: "[%(asctime)s] [%(process)s] [%(name)s] [%(levelname)s] %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: default
+    stream: ext://sys.stdout
+
+root:
+  level: INFO 
+  handlers: [console]
+
+loggers:
+  homeassistant_display_toggle: 
+    level: INFO
+    handlers: [console]
+    propagate: no
+  mqtt:
+    level: INFO
+    handlers: [console]
+    propagate: no
