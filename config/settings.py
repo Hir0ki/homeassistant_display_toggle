@@ -1,5 +1,5 @@
 from logging.config import dictConfig
-from .conifg import Config
+from .config import Config
 import os
 import logging
 import yaml
