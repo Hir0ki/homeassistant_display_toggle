@@ -16,7 +16,7 @@ def on_message(client, userdata, message):
 
 def run(client: mqtt.Client):
 
-    client.publish(f"homeassistant/switch/{CONFIG.get_device_name()}/screen/config", f'{{"unique_id": "screen-{CONFIG.get_device_name()}", "name": "{CONFIG.get_device_name()} Screen", "device": {{"identifiers": ["{CONFIG.get_device_name()}"], "name": {CONFIG.get_device_name()}"}}, "~": "homeassistant/switch/{CONFIG.get_device_name()}/screen", "availability_topic": "~/state", "command_topic": "~/set", "retain": true}}', retain=True)
+    client.publish(f"homeassistant/switch/{CONFIG.get_device_name()}/screen/config", f'{{"unique_id": "screen-{CONFIG.get_device_name()}", "name": "{CONFIG.get_device_name()} Screen", "device": {{"identifiers": ["{CONFIG.get_device_name()}"], "name": "{CONFIG.get_device_name()}"}}, "~": "homeassistant/switch/{CONFIG.get_device_name()}/screen", "availability_topic": "~/state", "command_topic": "~/set", "retain": true}}', retain=True)
     client.publish(f"homeassistant/switch/{CONFIG.get_device_name()}/screen/state", "online", retain=True)
     logging.info("Set mqtt toptic state to online")
 
