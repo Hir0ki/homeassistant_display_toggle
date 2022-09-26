@@ -9,10 +9,10 @@ def on_message(client, userdata, message):
     logging.info(f"Got mqtt payload: {message.payload}")
     if message.payload == b'ON' :
         logging.info("turning screen on")
-        call(["vcgencmd", "display_power", "1"])
+        call(["xrandr", "--output", "HDMI-1", "--auto"])
     if message.payload == b'OFF':
         logging.info("turning screen off")
-        call(["vcgencmd", "display_power", "0"])
+        call(["xrandr", "--output", "HDMI-1", "--off"])
 
 def run(client: mqtt.Client):
 
