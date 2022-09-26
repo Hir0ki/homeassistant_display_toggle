@@ -6,6 +6,8 @@ Description=homeassistant display toggle service
 ExecStart=/home/pi/homeassistant_display_toggle/main.py
 WorkingDirectory=/home/pi/homeassistant_display_toggle
 Environment=PYTHONUNBUFFERED=1
+Environment=DISPLAY=:0.0
+User=pi
 
 Restart=on-failure
 RestartSec=5
